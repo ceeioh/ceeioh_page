@@ -1,3 +1,5 @@
 module.exports = {
-    publicPath: '/ceeioh',
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/REPO_NAME/'
+    : '/'
 }
