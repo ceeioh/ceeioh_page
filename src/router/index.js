@@ -32,7 +32,7 @@ const routes = [
     name: 'actuar',
     component: () => import('../views/Actuar.vue')
   },
-  {
+  /*{
     path: '/root',
     name: 'root',
     component: () => import('../views/Root.vue'),
@@ -51,10 +51,11 @@ const routes = [
       if(isAuthenticated) next({name: 'root'})
       else next()
     }
-   },
+   },*/
 ]
 
 const router = createRouter({
+  mode: 'history',
   history: createWebHistory(process.env.BASE_URL),
   routes
 })

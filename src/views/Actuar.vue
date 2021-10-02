@@ -1,9 +1,9 @@
 <template>
-    <section class="w-screen mx-auto">
+    <section class="w-screen">
         <article v-for="(e,i) in videos" :key="i">
 
             <div class="container mx-auto my-5">
-                <div class="relative rounded-lg flex flex-col md:flex-row items-center md:shadow-xl md:h-72 mx-2">
+                <div class="relative rounded-lg flex flex-col md:flex-row items-center md:shadow-xl md:h-72">
                     
                     <div class="z-0 order-1 md:order-2 relative w-full md:w-2/5 h-80 md:h-full overflow-hidden rounded-lg md:rounded-none md:rounded-r-lg">
                         <div class="absolute inset-0 w-full h-full object-fill object-center bg-cover bg-bottom">
@@ -100,3 +100,8 @@ export default {
     }
 }
 </script>
+<style>
+  .default {
+  width: 100vw;
+    }   
+</style>

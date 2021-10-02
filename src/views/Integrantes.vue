@@ -1,8 +1,8 @@
 <template>
 
 
-
-<div class="grid xl:grid-cols-3 xl:grid-rows-7 | grid-cols-1 grid-rows-21 ">
+<section id="integrantes">
+<div class="grid xl:grid-cols-3 xl:grid-rows-7 | grid-cols-1 grid-rows-21 | w-screen">
  <div v-for="(e,i) in info.integrantes" class="card border w-11/12 lg:w-10/12 hover:shadow-none relative flex flex-col mx-auto shadow-lg m-5" :key="i">
     <img class="max-h-20 w-full opacity-80 absolute top-0" style="z-index:-1" :src="getImg()" />
     <div class="profile w-full flex my-3 text-white mb-6">
@@ -19,6 +19,7 @@
     </div>
   </div>
 </div>
+</section>
 </template>
 <script>
 

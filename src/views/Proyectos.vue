@@ -1,132 +1,67 @@
 <template>
-<div v-if="proyectos !== null">
-        <select class="center w-1/3 border border-gray-300 mt-2" v-model="search">
-            <option value="0">Todas las Areas</option>
-            <template v-for="(e,i) in info.areas" :key="i">
-            <option :value="i+1">{{e}}</option>
-            </template>
-        </select> 
-          <div
-            class="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50"
-          >
-         
-            <template v-for="(e,i) in proyectos.data.proyects.reverse()" :key="i">
-                <!-- left -->
+    <section id="proyectos" class="w-screen">
+        <div>
 
-                <template v-if="(Math.floor(Math.random() * (1 - 0 + 1) + 0))">
-            
-                    <div class="flex flex-row-reverse md:contents">
-                    <div
-                        class="bg-blue-500 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md w-4/5">
-                        <h3 class="text-left">Numero: {{i+1}}</h3>
-                        <h2 class="font-semibold text-lg mb-1">{{e.nombre}}</h2>
-                        <p class="leading-tight text-justify">
-                            {{e.descripcion}}
-                        </p>
-                        <p class="leading-tight text-right">
-                            Area: {{e.area}}
-                        </p>
-            <div class="border rounded-lg border-gray-500 w-full bg-gray-200 mt-2">
-              <div class=" rounded-l-md text-xs leading-none py-1 text-center text-black" 
-              :style="`width: ${e.avance}%`"
-              :class="{
-                'rounded-lg': e.avance > 97 ? true : false,
-                'bg-red-300':  e.avance > -1 ? true : false,
-                'bg-yellow-400':  e.avance > 39 ? true : false,
-                'bg-green-400':  e.avance > 59 ? true : false,
-
-                }"
-             
-              >{{e.avance}}%</div>
-            </div>
-                        
-                    </div>
-                    <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
-                        <div class="h-full w-6 flex items-center justify-center">
-                        <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
-                        </div>
-                        <div
-                        class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"
-                        ></div>
-                    </div>
-                    </div>
-                </template>
-                <template v-else>
-                    <div class="flex md:contents">
-                    <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
-                        <div class="h-full w-6 flex items-center justify-center">
-                        <div class="h-full w-1 bg-pink-500 pointer-events-none"></div>
-                        </div>
-                        <div
-                        class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-pink-500 shadow"
-                        ></div>
-                    </div>
-                    <div
-                        class="bg-pink-500 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md w-4/5"
-                    >
-                        <h3 class="text-left">Numero: {{i+1}}</h3>
-                        <h2 class="font-semibold text-lg mb-1">{{e.nombre}}</h2>
-                        <p class="leading-tight text-justify">
-                            {{e.descripcion}}.
-                        </p>
-                                                <p class="leading-tight text-right">
-                            Area: {{e.area}}
-                        </p>
-             <div class="border rounded-lg border-gray-500 w-full bg-gray-200 mt-2">
-              <div class=" rounded-l-md text-xs leading-none py-1 text-center text-black" 
-              :style="`width: ${e.avance}%`"
-              :class="{
-                'rounded-lg': e.avance > 97 ? true : false,
-                'bg-red-300':  e.avance > -1 ? true : false,
-                'bg-yellow-400':  e.avance > 39 ? true : false,
-                'bg-green-400':  e.avance > 59 ? true : false,
-                }"
-             
-              >{{e.avance}}%</div>
-            </div>
-
-                    </div>
-                    </div>
-                </template>
-            </template>
         </div>
-</div>
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-5 | mx-4">
+
+            <article v-for="(i,e) in proyectos.lista_proyectos" :key="e"
+            class="mt-3 rounded overflow-hidden shadow-lg mt-10 border bg-white"
+            >
+                <div>
+                    <h3 class="pt-2 pl-5 text-left font-semibold	">
+                        <p class="text-left">{{i.n}}</p>
+                        <p class="text-rigth">{{proyectos.areas[i.ar]}}</p>
+                    </h3>
+                    <p  class="p-2 pl-5 pr-5 text-justify pb-0">{{i.d}}</p>
+                </div>
+                <div class="px-5 pb-3 pt-1 flex h-0">
+                    <div class=" rounded-md text-xs border-2 border-gray-200 bg-gray-100 leading-none py-1 text-center text-black mr-2" :style="`width: 100%;`">
+                    <div class=" rounded-md text-xs leading-none py-1 text-center text-black mr-2 -my-1" 
+                        :style="`width: ${i.pr}%; background-color: #42b983`"             
+                        ></div>
+                    </div>
+                    <div class="-my-1 -mx-1 font-medium">
+                        {{i.pr}}%
+                    </div>
+                </div>
+                <div class="text-left text-blue-500 px-5 pb-2 pt-1">
+                    <button @click="more_info(e)">Ver más</button>
+                </div>
+                <div class="bg-gray-100 opacity-0 h-1 | transition-height duration-500 overflow-auto"  :id="'more-'+e">
+                    <div class="bg-gray-400 h-1 mb-2"></div>
+                    <div class="text-justify px-5 bg-scroll	">
+                    <p>Objetivo: {{i.o}}</p>
+                    <p class="pb-2">Lugar: {{i.lu}}</p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
 </template>
 
 <script>
-import {getAllProjects} from '@/functions/axios'
-import info from '@/functions/areas'
-
+import proyectos from '@/functions/proyectos'
+const d = document
 export default {
     data(){
         return {
-            proyectos: null,
-            info,
-            search: 0,
+            proyectos: proyectos
         }
     },
-    async created() {
-            if(this.page === 0) return this.proyectos = await getAllProjects()
-            this.proyectos = await getAllProjects({
-                area: info.areas[this.page-1]
-            })
+    methods: {
+        more_info(index){
+            const div = d.getElementById("more-"+index)
+            div.classList.toggle("h-32")
+            div.classList.toggle("opacity-0")
+        }
     },
     computed: {
         page(){
             return this.$route.query.q
         }
     },
-    watch: {
-        async search(now) {
-            console.log(info.areas[now-1])
-            this.$router.push("proyectos?q="+now)
-        },
-        async page(now){
-            if(!info.areas[now-1]) return this.proyectos = await getAllProjects()
-            this.proyectos = await getAllProjects({
-                area: info.areas[now-1]
-            })
-        }
-    }
 }
 </script>
