@@ -115,7 +115,7 @@ export default {
     created(){
       setInterval(() => {
           this.next()
-      }, 15000);
+      }, 12000);
     },
     methods: {
       next(){
