@@ -7,15 +7,15 @@
       }">
           <img src="@/assets/centroalumnos.jpg" alt="centro de alumnos actual del cee ioh" class="object-cover">
       </div>
-      <div class="absolute transition duration-700 ease-in-out flex items-center justify-center 	"
+      <div class="absolute transition duration-700 ease-in-out flex items-center justify-center"
         :class="{'opacity-0' : viendo === 2 ? false : true}"
       >
 
 
-                    <div class="z-10 order-2 md:order-1 border-2 border-gray-300 rounded-lg	bg-gray-100		 w-full h-full md:w-3/5 flex items-center -mt-6 md:mt-0">
-                        <div class="p-8 md:pr-18 md:pl-14 md:py-12 mx-2 md:mx-0 h-full  rounded-lg md:rounded-none md:rounded-l-lg shadow-xl md:shadow-none">
-                            <h4 class="hidden md:block text-xl text-gray-400">Bienvenido a</h4>
-                            <h3 class="hidden md:block font-bold text-2xl text-gray-700">Página oficial del CEE</h3>
+                    <div class="z-10 border-2 border-gray-300 rounded-lg bg-gray-100	w-1/2 flex items-center">
+                        <div class="p-8 rounded-lg md:rounded-none md:rounded-l-lg shadow-xl md:shadow-none">
+                            <h4 class="text-xl text-gray-400">Bienvenido a</h4>
+                            <h3 class="font-bold text-2xl text-gray-700">Página oficial del CEE</h3>
                             <p class="text-gray-600 text-justify">
                                 En este lugar se publicará la información oficial del centro de alumnos, llámese encuestas, proyectos con su estado de avance, grupos de estudio, entre otros temas importantes para la actualidad de colegio, todo esto para fomentar la participación y ser más transparentes y democráticos.
                             </p>
