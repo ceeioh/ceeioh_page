@@ -30,12 +30,12 @@
       </div>
       <div class="absolute flex w-screen pr-10 pl-10 z-100">
         <button class="rounded-full bg-white w-16 h-16 flex items-center justify-center text-3xl" @click="prev()">
-          <h1>🢘</h1>
+          <h1>&#8592;</h1>
         </button>
         <div class="flex-grow">
         </div>
         <button class="rounded-full bg-white w-16 h-16 flex items-center justify-center text-3xl	" @click="next()">
-          <h1 class="">🢚</h1>
+          <h1 class="">&#8594;</h1>
         </button>
       </div>
   </section>
