@@ -24,32 +24,27 @@
       name:'Integrantes',
       link:'/integrantes'
     }
-  ]"/>
+  ]">
+  <div class="flex justify-center items-center flex-grow">
+    <router-link to="/actualidad#ganadores">
+    <span class="tracking-wider text-white bg-blue-500 px-4 py-1 text-sm rounded leading-loose mx-2 font-semibold" title="">
+      <i class="fas fa-award" aria-hidden="true"></i> Ganadores
+    </span>
+    </router-link>
+  </div>
+  </NavBar>
   <div class="container">
     <router-view/>
   </div>
 </template>
 <script>
 import NavBar from '@/components/NavBar'
-//import {getAllProjects} from '@/functions/axios'
 
 export default {
   name: 'app',
   components: {
     NavBar
-  },
-  /*
-  data(){
-      return {
-          proyecto: true
-      }
-  },
-  async created() {
-    const res = await getAllProjects()
-    this.proyecto = res.data
-    provide('proyecto', this.proyecto)
-  }*/
-
+  }
 }
 </script>
 

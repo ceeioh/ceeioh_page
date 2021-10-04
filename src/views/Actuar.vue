@@ -22,10 +22,10 @@
                             <h3 class="hidden md:block font-bold text-2xl text-gray-700">{{e.nombre}}</h3>
                             <p class="text-gray-600 text-justify">
                                 {{e.descripcion}}
+                                
                             </p>
-                            <a class="flex items-baseline mt-3 text-blue-600 hover:text-blue-900 focus:text-blue-900" href="https://www.instagram.com/_ceeiohmaristas/" target="_blank">
-                                <span>Conocer más sobre el CEE</span>
-                                <span class="text-xs ml-1">&#x279c;</span>
+                            <a class=" items-baseline mt-3 text-blue-600 hover:text-blue-900 focus:text-blue-900" href="https://www.instagram.com/_ceeiohmaristas/" target="_blank">
+                                <h3>Conocer más sobre el CEE &#x279c;</h3>
                             </a>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white lg:px-8 px-1 pt-2 shadow-md flex pb-3  min-w-full">
+<nav class="bg-white lg:px-8 px-1 pt-2 shadow-md flex pb-3  min-w-full">
       <router-link to="/">
     <div class="flex justify-center items-center">
           <img src="@/assets/logo.png" width="50" alt="Logo CEEIOH">
@@ -18,17 +18,21 @@
             </svg>
         </button>
     </div>
-
-</nav>
-        <ul :class="{'opacity-0':see,'r-click': see}" class="lg:hidden z-50 top-0 transition-opacity duration-700 ease-in-out h-full w-full | r-flex | bg-gray-800 text-center z-10 fixed sm:px-3 sm:py-2  md:px-8 md:py-4 overflow-y-auto" >
-            <div class="m-auto">
-                <li v-for="(e,i) in pages" :key="i" class="text-xl font-bold py-4" @click="link()">
-                    <router-link class="px-2 text-green-500 hover:text-gray-200" :to="`${e.link}`">{{e.name}}</router-link>
-                </li>
+            <div class="flex">
+                <slot>
+                    
+                </slot>
             </div>
-        </ul>
-<h1>
-</h1>
+</nav>
+<ul :class="{'opacity-0':see,'r-click': see}" class="lg:hidden z-50 top-0 transition-opacity duration-700 ease-in-out h-full w-full | r-flex | bg-gray-800 text-center z-10 fixed sm:px-3 sm:py-2  md:px-8 md:py-4 overflow-y-auto" >
+    <div class="m-auto">
+        <li v-for="(e,i) in pages" :key="i" class="text-xl font-bold py-4" @click="link()">
+            <router-link class="px-2 text-green-500 hover:text-gray-200" :to="`${e.link}`">{{e.name}}</router-link>
+        </li>
+    </div>
+</ul>
+
+
 </template>
 <script>
 

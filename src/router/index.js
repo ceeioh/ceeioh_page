@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
@@ -32,31 +32,10 @@ const routes = [
     name: 'actuar',
     component: () => import('../views/Actuar.vue')
   },
-  /*{
-    path: '/root',
-    name: 'root',
-    component: () => import('../views/Root.vue'),
-    beforeEnter: (to, from, next) => {
-      let isAuthenticated = localStorage.getItem('cee_isAuthenticated')
-      if(to.name !== 'login' && !isAuthenticated) next({name: 'login'})
-      else next()
-    }
-   },
-   {
-    path: '/login',
-    name: 'login',
-    component: () => import('../views/Login.vue'),
-    beforeEnter: (to, from, next) => {
-      let isAuthenticated = localStorage.getItem('cee_isAuthenticated')
-      if(isAuthenticated) next({name: 'root'})
-      else next()
-    }
-   },*/
 ]
 
 const router = createRouter({
-  mode: 'history',
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(),
   routes
 })
 

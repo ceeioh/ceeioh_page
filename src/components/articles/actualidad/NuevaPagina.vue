@@ -6,7 +6,12 @@
                 <div class="relative rounded-lg flex flex-col md:flex-row items-center md:shadow-xl md:h-72 mx-2">
                     
                     <div class="z-0 order-1 md:order-2 relative w-full md:w-2/5 h-80 md:h-full overflow-hidden rounded-lg md:rounded-none md:rounded-r-lg">
-                        <div class="absolute inset-0 w-full h-full object-fill object-center bg-cover bg-bottom r-img"></div>
+                        <div class="absolute inset-0 w-full h-full object-fill object-center bg-cover bg-bottom">
+                                  
+                        <img class="object-cover w-full h-full"
+                        src="@/assets/centroalumnos.jpg"
+                        >
+                        </div>
                         <div class="md:hidden absolute inset-0 h-full p-6 pb-6 flex flex-col-reverse justify-start items-start bg-gradient-to-b from-transparent via-transparent to-gray-900">
                             <h3 class="w-full font-bold text-2xl text-white leading-tight mb-2">Página oficial del CEE</h3>
                             <h4 class="w-full text-xl text-gray-100 leading-tight">Bienvenido a</h4>

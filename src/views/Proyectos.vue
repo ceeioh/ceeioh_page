@@ -1,12 +1,19 @@
 <template>
     <section id="proyectos" class="w-screen">
-        <div>
-
+        <div class="my-5">
+            <label for="area">Escoge una area: </label>
+            <select id="area" name="area" v-model="busqueda" class="rounded border-2 border-gray-300">
+                <option :value="false">Todas las area</option>
+                <option :value="e" v-for="e in proyectos.areas" :key="e">{{e}}</option>
+            </select>
         </div>
-        <div class="grid grid-cols-1 xl:grid-cols-2 gap-5 | mx-4">
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-5 | px-4">
 
             <article v-for="(i,e) in proyectos.lista_proyectos" :key="e"
             class="mt-3 rounded overflow-hidden shadow-lg mt-10 border bg-white"
+            :class="{
+                'hidden': search(busqueda,proyectos.areas[i.ar]),
+            }"
             >
                 <div>
                     <h3 class="pt-2 pl-5 text-left font-semibold	">
@@ -48,7 +55,8 @@ const d = document
 export default {
     data(){
         return {
-            proyectos: proyectos
+            proyectos: proyectos,
+            busqueda: null
         }
     },
     methods: {
@@ -56,6 +64,14 @@ export default {
             const div = d.getElementById("more-"+index)
             div.classList.toggle("h-32")
             div.classList.toggle("opacity-0")
+        },
+        search(busqueda, buscado){
+
+            if(busqueda === buscado || !busqueda) {
+                return false
+            }
+            return true
+
         }
     },
     computed: {

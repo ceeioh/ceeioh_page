@@ -1,5 +1,5 @@
 <template>
-    <article id="nueva_pagina" class="py-5">
+    <article id="ganadores" class="py-5">
 <!-- component -->
 <!-- This is an example component -->
             <div class="container mx-auto my-5">
