@@ -1,9 +1,45 @@
 <template>
-
-      <div class="w-screen">
-          <img src="@/assets/centroalumnos.jpg" alt="centro de alumnos actual del cee ioh">
+<div class="w-screen">
+  <section class="flex justify-center items-center h-3/5" id="carrusel">
+      <div class="max-w-full transition duration-700 ease-in-out"
+      :class="{'opacity-0' : viendo === 1 ? false : true,
+              'opacity-100' : viendo === 1 ? true : false,
+      }">
+          <img src="@/assets/centroalumnos.jpg" alt="centro de alumnos actual del cee ioh" class="object-cover">
       </div>
-  <section class="w-screen p-5">
+      <div class="absolute transition duration-700 ease-in-out flex items-center justify-center 	"
+        :class="{'opacity-0' : viendo === 2 ? false : true}"
+      >
+
+
+                    <div class="z-10 order-2 md:order-1 border-2 border-gray-300 rounded-lg	bg-gray-100		 w-full h-full md:w-3/5 flex items-center -mt-6 md:mt-0">
+                        <div class="p-8 md:pr-18 md:pl-14 md:py-12 mx-2 md:mx-0 h-full  rounded-lg md:rounded-none md:rounded-l-lg shadow-xl md:shadow-none">
+                            <h4 class="hidden md:block text-xl text-gray-400">Bienvenido a</h4>
+                            <h3 class="hidden md:block font-bold text-2xl text-gray-700">Página oficial del CEE</h3>
+                            <p class="text-gray-600 text-justify">
+                                En este lugar se publicará la información oficial del centro de alumnos, llámese encuestas, proyectos con su estado de avance, grupos de estudio, entre otros temas importantes para la actualidad de colegio, todo esto para fomentar la participación y ser más transparentes y democráticos.
+                            </p>
+                            <a class="flex items-baseline mt-3 text-blue-600 hover:text-blue-900 focus:text-blue-900" href="https://www.instagram.com/_ceeiohmaristas/" target="_blank">
+                                <span>Conocer más sobre el CEE</span>
+                                <span class="text-xs ml-1">&#x279c;</span>
+                            </a>
+                        </div>
+                    </div>
+
+        
+      </div>
+      <div class="absolute flex w-screen pr-10 pl-10 z-100">
+        <button class="rounded-full bg-white w-16 h-16 flex items-center justify-center text-3xl" @click="prev()">
+          <h1>🢘</h1>
+        </button>
+        <div class="flex-grow">
+        </div>
+        <button class="rounded-full bg-white w-16 h-16 flex items-center justify-center text-3xl	" @click="next()">
+          <h1 class="">🢚</h1>
+        </button>
+      </div>
+  </section>
+  <section class="">
   <div class="grid grid-cols-3 mb-5">
     
     <div class="lg:col-span-2 col-span-3 p-2">
@@ -52,6 +88,7 @@
   </div>
 </div>
   </section>
+</div>
 </template>
 
 <script>
@@ -71,7 +108,24 @@ export default {
         return {
             proyectos,
             encuestas,
+            viendo: 1,
+            total_slides: 2 //cambiar segun el total de slides
         }
     },
+    created(){
+      setInterval(() => {
+          this.next()
+      }, 10000);
+    },
+    methods: {
+      next(){
+        this.viendo++;
+        if(this.total_slides < this.viendo) this.viendo = 1
+      },
+      prev(){
+        this.viendo--;
+        if(this.viendo === 0) this.viendo = this.total_slides
+      }
+    }
 }
 </script>
