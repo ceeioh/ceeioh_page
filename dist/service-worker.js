@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ceeioh_page/precache-manifest.c8884a7b6374fb4c34aa71948fb440ec.js"
+  "/ceeioh_page/precache-manifest.9ae606cccacd15318350ef3d68cc21e0.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "ceeioh"});
