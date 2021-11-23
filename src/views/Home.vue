@@ -1,40 +1,19 @@
 <template>
 <div class="w-screen">
-  <section class="flex justify-center items-center h-3/5" id="carrusel">
+  <section class="flex justify-center items-center h-3/5 r-color text-black	" id="carrusel">
       <div class="max-w-full transition duration-700 ease-in-out"
       :class="{'opacity-0' : viendo === 1 ? false : true,
               'opacity-100' : viendo === 1 ? true : false,
       }">
-          <img src="@/assets/centroalumnos.jpg" alt="centro de alumnos actual del cee ioh" class="object-cover">
+          <img src="@/assets/centroalumnos.jpg" alt="centro de alumnos actual del cee ioh maristas rancagua" class="object-cover">
       </div>
-      <div class="absolute transition duration-700 ease-in-out flex items-center justify-center"
-        :class="{'opacity-0' : viendo === 2 ? false : true}"
-      >
-
-
-                    <div class="z-10 border-2 border-gray-300 rounded-lg bg-gray-100	w-1/2 flex items-center">
-                        <div class="p-8 rounded-lg md:rounded-none md:rounded-l-lg shadow-xl md:shadow-none">
-                            <h4 class="text-xl text-gray-400">Bienvenido a</h4>
-                            <h3 class="font-bold text-2xl text-gray-700">Página oficial del CEE</h3>
-                            <p class="text-gray-600 text-justify">
-                                En este lugar se publicará la información oficial del centro de alumnos, llámese encuestas, proyectos con su estado de avance, grupos de estudio, entre otros temas importantes para la actualidad de colegio, todo esto para fomentar la participación y ser más transparentes y democráticos.
-                            </p>
-                            <a class="flex items-baseline mt-3 text-blue-600 hover:text-blue-900 focus:text-blue-900" href="https://www.instagram.com/_ceeiohmaristas/" target="_blank">
-                                <span>Conocer más sobre el CEE</span>
-                                <span class="text-xs ml-1">&#x279c;</span>
-                            </a>
-                        </div>
-                    </div>
-
-        
-      </div>
-      <div class="absolute flex w-screen pr-10 pl-10 z-100">
-        <button class="rounded-full bg-white w-16 h-16 flex items-center justify-center text-3xl" @click="prev()">
+      <div class="absolute flex w-screen z-100 | md:pr-10 md:pl-10 | pr-2 pl-2">
+        <button class="rounded-full bg-white flex items-center justify-center | md:text-3xl md:w-16 md:h-16 | text-xl w-8 h-8" @click="prev()">
           <h1>&#8592;</h1>
         </button>
         <div class="flex-grow">
         </div>
-        <button class="rounded-full bg-white w-16 h-16 flex items-center justify-center text-3xl	" @click="next()">
+        <button class="rounded-full bg-white flex items-center justify-center | md:text-3xl md:w-16 md:h-16 | text-xl w-8 h-8 	" @click="next()">
           <h1 class="">&#8594;</h1>
         </button>
       </div>
@@ -109,7 +88,7 @@ export default {
             proyectos,
             encuestas,
             viendo: 1,
-            total_slides: 2 //cambiar segun el total de slides
+            total_slides: 1 //cambiar segun el total de slides
         }
     },
     created(){
@@ -129,3 +108,8 @@ export default {
     }
 }
 </script>
+<style>
+.r-color {
+    background-color:  #2c3e50;
+}
+</style>
