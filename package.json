@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "commit": "git add . && git commit -m 'bot' && git push -u origin main",
+    "save": "git add . && git commit -m 'bot' && git push -u origin main",
     "submit": "npm run build && git add dist && git commit -m 'auto-bot' && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
