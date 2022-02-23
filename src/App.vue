@@ -28,7 +28,7 @@
   <div class="flex justify-center items-center flex-grow">
     <router-link to="/actualidad#ganadores">
     <span class="tracking-wider text-white bg-blue-500 px-4 py-1 text-sm rounded leading-loose mx-2 font-semibold" title="">
-      <i class="fas fa-award" aria-hidden="true"></i> Ganadores
+      Quiero Participar
     </span>
     </router-link>
   </div>
